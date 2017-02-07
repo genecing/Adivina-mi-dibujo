@@ -13,10 +13,6 @@ Dispatcher.register( function(action) {
         text: action.payload.text
       });
       break;
-
-    case Constants.actions.PLAYER_NEW:
-      console.log("hay un jugador nuevo");
-      break;
   }
 });
 

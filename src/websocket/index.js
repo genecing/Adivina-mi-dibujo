@@ -5,12 +5,12 @@ import Actions from '../actions'
 const websocket = {
 
   connect(){
-
-    setInterval(function(){
-      window.console.log('En setinterval');
-      Actions.postNew('usuario','cosa')
-    }, 100000)
-
+    var socket = require('socket.io-client')('http://localhost:8082');
+    
+    socket.on('connect', function(){
+      window.console.log("conectado");
+      
+    });
   }
 
 }
