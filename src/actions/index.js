@@ -13,6 +13,16 @@ const Actions  = {
       }
     });
   },
+
+  playerNew(player){
+    Dispatcher.dispatch({
+      actionType: Constants.actions.PLAYER_NEW,
+      payload:{
+        name: player.name
+        type: player.type
+      }
+    });
+  }
 }
 
 module.exports = Actions;

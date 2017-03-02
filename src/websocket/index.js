@@ -1,6 +1,4 @@
-//Crear conexion con servidor websocket
-import Actions from '../actions'
-
+//import Actions from '../actions'
 
 const websocket = {
 
@@ -8,9 +6,15 @@ const websocket = {
     var socket = require('socket.io-client')('http://localhost:8082');
     
     socket.on('connect', function(){
-      window.console.log("conectado");
-      
+      window.console.log('conectado');
+
+      socket.on('newPlayer', function(player){
+        window.console.log('nuevo usuario', player);
+      })
+
     });
+
+
   }
 
 }

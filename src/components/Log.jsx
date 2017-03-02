@@ -15,7 +15,9 @@ class Log extends React.Component{
   }
 
   componentDidMount() {
-    this.setState(this.fetchState());
+    this.setState(this._fetchState());
+
+    //Se dice que metodo debe llamar cuando cambie algo en Store
     Store.addChangeListener(this._onChange);
   }
 
@@ -24,11 +26,10 @@ class Log extends React.Component{
   }
 
   _onChange() {
-    this.setState(this.fetchState());
+    this.setState(this._fetchState());
   }
 
-  fetchState() {
-    //window.console.log('en fetchState');
+  _fetchState() {
     return {
       posts: Store.getPosts()
     };

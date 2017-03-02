@@ -13,6 +13,12 @@ Dispatcher.register( function(action) {
         text: action.payload.text
       });
       break;
+
+    case Constants.actions.PLAYER_NEW:
+      Store.playerNew({
+        name: action.payload.name,
+        type: action.payload.type
+      })
   }
 });
 

@@ -4,6 +4,7 @@ import _ from 'lodash';
 const CHANGE_EVENT = 'change';
 
 //Todos los posts (mensajes de usuarios que intentan adivinar)
+//Empieza con _ antes porque son variables privadas
 var _posts = [{name:'usuario', text:'hola'}];
 
 
@@ -16,6 +17,10 @@ const store = _.merge({}, EventEmitter.prototype, {
 
   getPosts(){
     return _posts;
+  },
+
+  playerNew(name, type){
+    return name;
   },
 
   //método que viene de EventEmitter.prototype
